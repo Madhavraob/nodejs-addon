@@ -10,7 +10,7 @@ int numberOfCalls = 0;
 
 void WhoAmI(const v8::FunctionCallbackInfo<v8::Value>& args) {
   v8::Isolate* isolate = args.GetIsolate();
-  auto message = v8::String::NewFromUtf8(isolate, "I'm a Node Hero!");
+  auto message = v8::String::NewFromUtf8(isolate, "EncryptionModule :: I'm a Node Hero!");
   args.GetReturnValue().Set(message);
 }
 
@@ -26,7 +26,7 @@ void Increment(const v8::FunctionCallbackInfo<v8::Value>& args) {
   int argsValue = args[0]->NumberValue();
   if (numberOfCalls + argsValue > maxValue) {
     isolate->ThrowException(v8::Exception::Error(
-          v8::String::NewFromUtf8(isolate, "Counter went through the roof!")));
+          v8::String::NewFromUtf8(isolate, "EncryptionModule :: Counter went through the roof!")));
     return;
   }
 
